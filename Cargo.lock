@@ -1,0 +1,11 @@
+[[package]]
+name = "poker-parser"
+version = "0.1.0"
+
+[[package]]
+name = "poker-rust-kata"
+version = "0.1.0"
+dependencies = [
+ "poker-parser 0.1.0",
+]
+
