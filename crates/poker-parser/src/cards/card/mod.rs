@@ -1,10 +1,12 @@
 mod suit;
 mod number;
 
+pub use self::suit::Suit;
+
 #[derive(Debug, PartialEq)]
 pub struct Card {
     number: u8,
-    suit: suit::Suit
+    pub suit: Suit
 }
 
 pub fn parse(card: &str) -> Card {
@@ -20,8 +22,8 @@ mod tests {
 
     #[test]
     fn it_parsers_string_to_card() {
-        assert_eq!(parse("2H"), Card { number: 2, suit: suit::Suit::Hearts });
-        assert_eq!(parse("7S"), Card { number: 7, suit: suit::Suit::Spades });
-        assert_eq!(parse("AD"), Card { number: 14, suit: suit::Suit::Dimonds });
+        assert_eq!(parse("2H"), Card { number: 2, suit: Suit::Hearts });
+        assert_eq!(parse("7S"), Card { number: 7, suit: Suit::Spades });
+        assert_eq!(parse("AD"), Card { number: 14, suit: Suit::Dimonds });
     }
 }
