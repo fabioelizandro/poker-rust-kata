@@ -7,7 +7,12 @@ pub enum Suit {
 }
 
 pub fn parse(card: &str) -> Suit {
-    match &card[1..2] {
+    let numbers_as_char: &[_] = &['J', 'Q', 'K', 'A'];
+    let card_suit = card
+        .trim_matches(char::is_numeric)
+        .trim_matches(numbers_as_char);
+
+    match card_suit {
         "H" => Suit::Hearts,
         "D" => Suit::Dimonds,
         "C" => Suit::Clubs,
@@ -49,5 +54,14 @@ mod tests {
         assert_eq!(parse("3H"), Suit::Hearts);
         assert_eq!(parse("4H"), Suit::Hearts);
         assert_eq!(parse("5H"), Suit::Hearts);
+        assert_eq!(parse("6H"), Suit::Hearts);
+        assert_eq!(parse("7H"), Suit::Hearts);
+        assert_eq!(parse("8H"), Suit::Hearts);
+        assert_eq!(parse("9H"), Suit::Hearts);
+        assert_eq!(parse("10H"), Suit::Hearts);
+        assert_eq!(parse("JH"), Suit::Hearts);
+        assert_eq!(parse("QH"), Suit::Hearts);
+        assert_eq!(parse("KH"), Suit::Hearts);
+        assert_eq!(parse("AH"), Suit::Hearts);
     }
 }
