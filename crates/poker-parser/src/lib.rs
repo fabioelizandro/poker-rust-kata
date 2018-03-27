@@ -1,14 +1,11 @@
+mod cards;
+
 pub fn hi() {
-    println!("Changed")
-}
+    let card = cards::card::parse("2H");
 
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        assert_eq!(4, 4);
+    match card.suit {
+        cards::card::Suit::Hearts => println!("H"),
+        cards::card::Suit::Spades => println!("S"),
+        _ => println!("OTHER")
     }
 }
