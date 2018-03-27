@@ -1,7 +1,7 @@
 mod cards;
 
 pub fn hi() {
-    let card = cards::card::parse("2H");
+    let card = cards::parse("2H").pop().unwrap();
 
     match card.suit {
         cards::card::Suit::Hearts => println!("H"),

@@ -5,7 +5,7 @@ pub use self::suit::Suit;
 
 #[derive(Debug, PartialEq)]
 pub struct Card {
-    number: u8,
+    pub number: u8,
     pub suit: Suit
 }
 
