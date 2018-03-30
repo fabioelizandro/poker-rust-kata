@@ -8,7 +8,7 @@ pub use self::game::PokerGame;
 pub fn parse(raw_games: &str) -> Vec<PokerGame>  {
     raw_games
         .lines()
-        .map(|line| line.trim())
+        .map(str::trim)
         .filter(|line| !line.is_empty())
         .map(game::parse)
         .collect()
