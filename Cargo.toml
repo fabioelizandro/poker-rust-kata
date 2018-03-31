@@ -5,3 +5,4 @@ authors = ["Fabio Elizandro <fabio@elizandro.com.br>"]
 
 [dependencies]
 poker-parser = { path = "crates/poker-parser" }
+poker-dealer = { path = "crates/poker-dealer" }
